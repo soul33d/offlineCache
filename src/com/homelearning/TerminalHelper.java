@@ -24,7 +24,7 @@ public class TerminalHelper {
         try {
             System.out.println(booksLibrary.getBiggestWord(bookName));
         } catch (NoSuchBookException e) {
-            System.out.println("There is no " + e.getBookName() + " in library");
+            System.err.println("There is no " + e.getBookName() + " in library!!!");
             printBiggestWord(readBookNameFromInput());
         }
         printBiggestWord(readBookNameFromInput());
