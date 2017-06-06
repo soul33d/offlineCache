@@ -41,8 +41,7 @@ public class BooksLibrary {
         bookName = bookName.toUpperCase();
         String result = cache.get(bookName);
         if (result != null) {
-            System.err.println("From cache.");
-            System.err.println((System.currentTimeMillis() - start) + " ms.");
+            System.err.println("From cache : " + ((System.currentTimeMillis() - start) + " ms."));
             return result;
         }
         String bookText = readTextFromFile(bookName);
@@ -50,8 +49,7 @@ public class BooksLibrary {
         bookText = bookText.replaceAll("[\\p{Punct}]|[«]|[»]|[”]|[“]", "");
         result = Arrays.stream(bookText.split(" ")).max(Comparator.comparingInt(String::length)).orElse("");
         cache.put(bookName, result);
-        System.err.println("Calculated.");
-        System.err.println((System.currentTimeMillis() - start) + " ms.");
+        System.err.println("Calculated : " + ((System.currentTimeMillis() - start) + " ms."));
         return result;
     }
 
