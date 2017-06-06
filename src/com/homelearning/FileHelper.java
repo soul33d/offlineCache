@@ -10,6 +10,7 @@ public class FileHelper {
         int c;
         while ((c = fileReader.read()) != -1)
             stringBuilder.append((char) c);
+        fileReader.close();
         return stringBuilder.toString();
     }
 }
