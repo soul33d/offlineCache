@@ -20,7 +20,10 @@ public class TerminalHelper {
 
     @SuppressWarnings("InfiniteRecursion")
     private void printBiggestWord(String bookName) {
-        if (bookName.equals(EXIT_INPUT_KEY)) System.exit(0);
+        if (bookName.equals(EXIT_INPUT_KEY)) {
+            scanner.close();
+            System.exit(0);
+        }
         try {
             System.out.println(booksLibrary.getBiggestWord(bookName));
         } catch (NoSuchBookException e) {
